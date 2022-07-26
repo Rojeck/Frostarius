@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		@@include('html/head.html', {
+			"title": "Главная"
+		})
+	</head>
+	<style>
+		.map {
+			display: none;
+		}
+		.projects {
+			padding: 90px 0;
+		}
+		@media (max-width: 670px) {
+    		.projects {
+    		    padding: 50px 0;
+    		}
+		}
+		.contact-block {
+			display: block;
+		}
+		.cost-calc {
+			display: none;
+		}
+	</style>
+<body>
+	<header class="header">
+		<div class="container">
+			@@include('html/header.html')
+		</div>
+	</header>
+	<main class="main">
+		<section class="preview">
+			<div class="container">
+				<div class="preview__content">
+					<div class="preview__title-block">
+						<h1 class="preview__title">Web studio</h1>
+						<div class="color-line"></div>
+					</div>
+					<div class="preview__desc-thick">
+						это отлаженная машина по производству качественного контента для всех видов медиа бизнеса в любом формате: текстовом, аудио, видео, анимационном. 
+					</div>
+					<div class="preview__btn-block data-goto = '.contacts-gt'">
+						@@include('html/connect-btn.html')
+					</div>
+					<div class="preview__desc-wide">Если Вы хотите вывести бизнес на рынок, сделать качественный ребрендинг, оптимизировать работу ресурса, создать бизнес с нуля или просто получить дополнительные конкурентные преимущества,
+						<p>тогда нам по пути.</p>
+						</div>
+				</div>
+			</div>
+		</section>
+		
+		<section class="proposals">
+			<div class="container">
+				<h2 class="proposals__title">Что мы вам предлагаем?</h2>
+			
+			<div class="proposals__content">
+				<ul class="proposals__list slider">
+					<li class="p-item"><a href="design.html">
+						<div class="p-item__content">
+							<div class="p-item__title">Дизайн</div>
+							<ul class="p-item__list ">
+								<li class="p-item__list-item">
+								
+									Комплексное продвижение бренда
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+							</ul>
+						</div>
+					</a></li>
+					<li class="p-item"><a href="marketing.html">
+						<div class="p-item__content">
+							<div class="p-item__title">Маркетинг</div>
+							<ul class="p-item__list">
+								<li class="p-item__list-item">
+								
+									Комплексное продвижение бренда
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+							</ul>
+						</div>
+					</a></li>
+					<li class="p-item"><a href="it.html">
+						<div class="p-item__content">
+							<div class="p-item__title">IT</div>
+							<ul class="p-item__list">
+								<li class="p-item__list-item">
+								
+									Комплексное продвижение бренда
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+							</ul>
+						</div>
+					</a></li>
+					<li class="p-item"><a href="copyright.html">
+						<div class="p-item__content">
+							<div class="p-item__title">Копирайтинг</div>
+							<ul class="p-item__list">
+								<li class="p-item__list-item">
+								
+									Комплексное продвижение бренда
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+								
+									Сайты под ключ
+								</li>
+								<li class="p-item__list-item">
+									
+									Сайты под ключ
+								</li>
+							</ul>
+						</div>
+					</a></li>
+				</ul>
+			</div></div>
+		</section>
+		<section class="projects">
+            @@include('html/projects.html')
+        </section>
+		<section class="guarantees">
+			<div class="container">
+				<h3 class="guarantees__title">Почему нам доверяют?</h3>
+				<div class="pros">
+					
+					<ul class="pros__list">
+						<li class="pros__item">
+							<span class="number">1</span>
+							<span class="text">
+								Проводим анализ целевой аудитории и долгосрочной стратегии
+							</span>
+						</li>
+						<li class="pros__item">
+							<span class="number">2</span>
+							<span class="text">Разрабатываем максимально алгоритмизированную и автоматизированную тактику продвижения </span>
+						</li>
+						<li class="pros__item">
+							<span class="number">3</span>
+							<span class="text">Помогаем разработать узнаваемый имидж, вникаем в ваш бизнес, чтобы получить максимальный результат</span>
+						</li>
+						<li class="pros__item">
+							<span class="number">4</span>
+							<span class="text">Выявляем самые эффективные методы работы с клиентами</span>
+						</li>
+					</ul>
+				</div>
+				<div class="sub-description">
+					<div class="color-line"></div>
+					<div class="sub-description__content">
+						<div class="sub-description__content-item">Для каждого проекта мы находим комплексное всестороннее решение. </div>
+						<div class="sub-description__content-item item-left">Все это помогает клиенту раскрыть коммерческий потенциал и выйти на новые высоты.</div>
+					</div>
+					<div class="color-line"></div>
+				</div>
+				<div class="description">
+					<div class="description__graphic-block">
+						<div class="description__graphic">
+							<div class="description__arrow">⟶</div>
+						</div>
+					</div>
+					<div class="description__content-block">
+						<p><strong>Frostarius </strong>на рынке недавно, но качество нашей работы непрерывно растет, с каждым заказом мы увеличиваем свою продуктивность и снижаем временной показатель.</p>
+						<p>Frostarius Studio окажет Вам услуги полного цикла по маркетингу, проектированию IТ-решений, информационную помощь на этапе их внедрения. А также по разработке функциональных веб-сайтов мобильных приложений, проектированию грамотных интерфейсов, реализации и автоматизации сложных бизнес-процессов. 
+						</p>
+						<p><strong>Сделай свой успех неизбежным !</strong></p>
+					</div>
+				</div>
+			</div>
+		</section>
+	@@include('html/contacts.html')
+	</main>
+	@@include('html/footer.html')
+
+</body>
+</html>

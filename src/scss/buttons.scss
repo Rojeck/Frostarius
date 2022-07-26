@@ -1,0 +1,49 @@
+.connect-btn {
+    position: relative;
+    font-family: $mainFont;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 152%;
+    
+    &__link {
+        color: white;
+
+    }
+}
+.square::after {
+    content: ' ';
+    width: 46px;
+    transition: all .8s;
+    height: 46px;
+    border-radius: 3px;
+    position: absolute;
+    top: -10px;
+    left: 259px;
+    background: url('img/buttons/firstimg.svg');
+    
+}
+
+.arrow::after {
+    content: '⟶';
+    transition: all .5s;
+    position: absolute;
+    top: -2px;
+    left: 240px;
+    z-index: 2;
+    font-weight: 300;
+    font-size: 32px;
+    color: #FFFFFF;
+}
+
+.connect-btn:hover .square::after {
+    transform: scale(1.5, 0.85);
+    transform-origin: right;
+}
+.connect-btn:hover .arrow::after {
+    border-radius: 7px;
+    transform: scale(1.3, 1);
+    left: 245px;
+    transform-origin: left;
+}
+
+

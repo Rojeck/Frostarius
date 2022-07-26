@@ -1,0 +1,343 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Дизайн</title>
+	<script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script defer src="js/app.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script type="text/javascript">
+        (function() {
+            emailjs.init('xYfxmlDugTPe5ZvtX');
+        })();
+    </script>
+
+	<script>
+	function mshow() {
+		const	mview = document.querySelector('.menu-block');
+				mview.style.left = '0';
+			}
+	function mclose() {
+		const	mview = document.querySelector('.menu-block');
+				mview.style.left = '-1000px';
+			}
+	</script>
+	
+        <style>
+            .fullscreen__go-btn {
+            position: inherit;
+        }
+            .map__portfolio,.map__about,.map__design,.map__marketing,.map__it,.map__copyright {
+            display: none;
+        }
+        .map__design {
+            display: inline;
+        }
+            .map {
+            display: block;
+        }
+        .menu-block {
+            display: none;
+        }
+		.cost-calc {
+			display: block;
+		}
+            .design-text-add {
+                display: inline;
+            }
+            @media (max-width: 768px) {
+            .cost-calc {
+                display: none;
+            }
+            .contact-block {
+			display: block;
+		}
+        }
+        </style>
+	</head>
+    
+<body>
+    <div class="fullscreen">
+        <div class="fullscreen__title design">
+            <img  src="img/fullscreen/design.svg" alt="">
+        </div>
+            <div class="container">
+                <div class="fullscreen__header">
+                    <header class="header">
+                        <div class="header__block">
+    <nav class="nav">
+        
+        <div class="head">
+            <a href="index.html"><div class="head__logo">
+                <img src="img/logo/logo.svg" alt="logo">
+            </div></a>
+            <div class="head__burger-button" onclick="mshow()">
+                <img src="img/buttons/menu-burger.svg" alt="menu button">
+            </div>
+        </div>
+        
+        <div class="map">
+            <div class="map__list">
+                <a href="index.html">Главная</a>
+                <a class="highlited-item map__portfolio" style="opacity: 1;" href="">/ Порфолио</a>
+                <a class="highlited-item map__about" style="opacity: 1;" href="">/ О компании</a>
+                <a href="index.html" class="map__services">/ Услуги /</a>
+                <a class="highlited-item map__design" style="opacity: 1;" href="">Дизайн</a>
+                <a class="highlited-item map__marketing" style="opacity: 1;" href="">Маркетинг</a>
+                <a class="highlited-item map__it" style="opacity: 1;" href="">IT</a>
+                <a class="highlited-item map__copyright" style="opacity: 1;" href="">Копирайтинг</a>
+            </div>
+            <div class="color-line"></div>
+        </div>
+        <div class="menu-block">
+
+            <div class="head">
+                <div class="head__logo">
+                    <img src="img/logo/logo.svg" alt="logo">
+                </div>
+                <div class="head__burger-button" onclick="mclose()">
+                    <img src="img/buttons/menu-burger.svg" alt="menu button">
+                </div>
+            </div>
+
+            <div class="menu ">
+                <ul class="menu__list">
+                    <li class="menu__item"><a data-goto = '.services-gt' href="#">Услуги</a></li>
+                    <li class="menu__item"><a href="portfolio.html">Портфолио</a></li>
+                    <li class="menu__item"><a href="about.html">О компании</a></li>
+                    <li class="menu__item"><a data-goto='.contacts-gt' href="#">Контакты</a></li>
+                </ul>
+                <div class="color-line"></div>
+            </div>
+           
+            <!-- additional block for mobile view-->
+            <div class="mview ">
+                
+                <address class="mview__adress">
+                    <div class="mview__adress-description">Наши контакты</div>
+                    <div class="mview__adress-number">+995 558 92 54 73</div>
+                    <div class="mview__adress-email">frostarius@workmail.com</div>
+                </address>
+
+                <div class="mview__social">
+                    <ul class="mview__social-list">
+                        <li class="mview__social-item"><a href="#">BEHANCE</a></li>
+                        <li class="mview__social-item"><a href="#">INSTAGRAM</a></li>
+                        <li class="mview__social-item"><a href="#">WHATSAPP</a></li>
+                        <li class="mview__social-item"><a href="#">FACEBOOK</a></li>
+                        <li class="mview__social-item"><a href="#">LINKEDIN</a></li>
+                        <li class="mview__social-item"><a href="#">TELEGRAM</a></li>
+                    </ul>
+                </div>
+
+                <div class="mview__footer">
+                    <div class="mview__logo">
+                        <img src="img/logo/logo_small.svg" alt="logo">
+                    </div>
+                    <div class="mview__footer-description">
+                        <div class="mview__confidencial">Политика конфиденциальности</div>
+                        <div class="mview__confidencial">Copyright @2022 "Frostarius studio"</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- additional block for mobile view //-->
+    </nav>
+</div>
+
+                    </header>
+                </div>
+                <div class="fullscreen__go-btn">
+                        <div data-goto = '.contacts-gt' class="connect-btn">  
+    <a data-goto = '.contacts-gt' class = 'connect-btn__link' href="#">
+        <span data-goto='.contacts-gt'>СВЯЗАТЬСЯ С НАМИ</span>
+    <span data-goto='.contacts-gt' class="arrow"></span>
+    <span data-goto='.contacts-gt' class="square"></span>
+</a>
+</div>
+
+
+                </div>
+            </div>
+    </div>
+    <main>
+        <section class="advantages">
+            <div class="container">
+                <h1 class="advantages__title">Что вы получаете, когда выбираете нас?</h1>
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/1.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Четкий подбор инструментов для работы с вашими запросами
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/2.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Глубокая настройка каждого элемента вашей сети, под определенный функционал продукта
+    
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/3.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Внедрение передовых IT технологий и языков программирования для достижения наибольшей результативности
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/4.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Взаимодействие специалиста с клиентом на протяжении всего цикла работы над проектом
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/5.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Использование облачных сервисов хранения информации, что повышает безопасность вашего ресурса
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/6.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Использование самых актуальных методов защиты при работе с данными клиента
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="projects">
+            <div class="our-projects-block">
+    <div class="our-projects-block-component our-projects-block-top">
+      <span class="our-projects-block-text our-projects-block-text-top">Наши работы 
+        <span class="marketing-text-add">в маркетинге</span>
+        <span class="it-text-add">в IT</span>
+        <span class="copyright-text-add">в копирайтинге</span>
+        <span class="design-text-add">в дизайне</span>
+    </span>
+      <div class="our-projects-block-images our-projects-block-images-top">
+        <img src="img/ourwork/1.svg" width="54%" alt=""/>
+        <img src="img/ourwork/2.svg" width="42%" alt=""/>
+      </div>
+    </div>
+    <div class="our-projects-block-component our-projects-block-bottom">
+      <div class="our-projects-block-images our-projects-block-images-bottom">
+        <img src="img/ourwork/3.svg" width="42%" alt=""/>
+        <img src="img/ourwork/4.svg" width="54%" alt=""/>
+      </div>
+      <div class="our-projects-block-text our-projects-block-text-bottom"> 
+        <span class="our-projects-block-text-span">Наши работы </span> 
+        <button class="our-projects-block-watch-button"> → </button>
+      </div>
+    </div>
+  </div>
+        </section>
+        
+        <section  class="contact-block contacts-gt">
+    <div class="container">
+        <div  class="contacts">
+            <div class="adress-block">
+                <h3 class="adress-block__title form-title">Наши контакты</h3>
+                <address class="adress-block__adress">
+                    <p class="tel"><a href="tel:+995558925473">+995 558 92 54 73</a></p>
+                    <p class="tel"><a href="tel:+995556748987">+995 556 74 89 87</a></p>
+                    <p class="mail"><a href="mailto:frostarius@workmail.com">frostarius@workmail.com</a></p>
+                </address>
+                <div class="adress-block__social">
+                    <ul class="adress-block__social-list">
+                        <li class="adress-block__social-item"><a href="https://instagram.com"><img src="img/svgicons/instagram.svg" alt="instagram icon"></a></li>
+                        <li class="adress-block__social-item"><a href="https://instagram.com"><img src="img/svgicons/instagram.svg" alt="instagram icon"></a></li>
+                        <li class="adress-block__social-item"><a href="https://instagram.com"><img src="img/svgicons/instagram.svg" alt="instagram icon"></a></li>
+                        <li class="adress-block__social-item"><a href="https://instagram.com"><img src="img/svgicons/instagram.svg" alt="instagram icon"></a></li>
+                        <li class="adress-block__social-item"><a href="https://instagram.com"><img src="img/svgicons/instagram.svg" alt="instagram icon"></a></li>
+                        <li class="adress-block__social-item"><a href="https://instagram.com"><img src="img/svgicons/whatsup.svg" alt="instagram icon"></a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="request-form">
+                <div class="request-form__content">
+                    <div class="request-form__title">Оставьте заявку</div>
+                    <div class="request-form__sub-title">И мы свяжемся с вами в течение 30 минут</div>
+                    <div class="request-form__form">
+                        <form action="request-form" class="form" id="contact-form">
+                            <input	class="request-form__item form__item _req" placeholder="Имя *" type="text" name="username" id="username">
+                            <input	class="request-form__item form__item _req" placeholder="Телефон *" type="tel" name="usertel" id="usertel">
+                            <input	class="request-form__item form__item" placeholder="E-mail"type="email" name="usermail" id="usermail">
+                            <button class="request-form__button form__button" type="submit">Отправить заявку</button>
+                        </form>
+                    </div>
+                    <div class="request-form__note note">Нажимая на кнопку Вы соглашаетесь с политикой конфиденциальности </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+<section class="cost-calc contacts-gt">
+    <div class="container ">
+        <h3 class="cost-calc__title form-title">
+            Оставьте заявку для расчета <br /> стоимости вашего проекта.
+        </h3>
+        <div class="cost-calc__form ">
+            <form action="#" class="form">
+                <input	class="cost-calc__item form__item _req" placeholder="Имя *" type="text" name="userName" id="username">
+                <input	class="cost-calc__item form__item _req" placeholder="Телефон *" type="number" name="userTel" id="usertel">
+                <input	class="cost-calc__item form__item" placeholder="E-mail"type="email" name="userMail" id="usermail">
+                <button class="cost-calc__button form__button" type="submit">Рассчитать стоимость</button>
+            </form>
+        </div>
+        <div class="request-form__note note">Нажимая на кнопку Вы соглашаетесь с политикой конфиденциальности </div>
+    </div>
+</section>
+	</main>
+	<footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <div class="footer__logo">
+                <img src="img/logo/logo_small.svg" alt="logo">
+            </div>
+            <nav class="footer__menu">
+                <ul class="footer__menu-list">
+                    <li class="footer__menu-item">
+                        <a href="#">IT</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#">Маркетинг</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#">Дизайн</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="#">Копирайтинг</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__confidential">
+                <p>Политика конфиденциальности</p>
+                <p>Copyright © 2022  «Frostarius Studio»</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body> 
+
+</html>

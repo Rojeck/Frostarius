@@ -1,0 +1,124 @@
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		@@include('html/head.html', {
+			"title": "Копирайтинг"
+		})
+        <style>
+            .fullscreen__go-btn {
+            position: inherit;
+        }
+            .map {
+            display: block;
+        }
+        .menu-block {
+            display: none;
+        }
+            .map__portfolio,.map__about,.map__design,.map__marketing,.map__it,.map__copyright {
+            display: none;
+        }
+        .map__copyright {
+            display: inline;
+        }
+		.cost-calc {
+			display: block;
+		}
+            .copyright-text-add {
+                display: inline;
+            }
+            @media (max-width: 768px) {
+            .cost-calc {
+                display: none;
+            }
+            .contact-block {
+			display: block;
+		}
+        }
+        </style>
+	</head>
+    
+<body>
+    <div class="fullscreen">
+        <img class="fullscreen__background copyright" src="img/fullscreen/copyright.svg" alt="">
+
+            <div class="container">
+                <div class="fullscreen__header">
+                    <header class="header">
+                        @@include('html/header.html')
+                    </header>
+                </div>
+                <div class="fullscreen__go-btn">
+                        @@include('html/connect-btn.html')
+                </div>
+            </div>
+    </div>
+    <main>
+        <section class="advantages">
+            <div class="container">
+                <h1 class="advantages__title">Что вы получаете, когда выбираете нас?</h1>
+                <ul class="advantages__list">
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/1.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Четкий подбор инструментов для работы с вашими запросами
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/2.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Глубокая настройка каждого элемента вашей сети, под определенный функционал продукта
+    
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/3.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Внедрение передовых IT технологий и языков программирования для достижения наибольшей результативности
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/4.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Взаимодействие специалиста с клиентом на протяжении всего цикла работы над проектом
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/5.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Использование облачных сервисов хранения информации, что повышает безопасность вашего ресурса
+                        </div>
+                    </li>
+                    <li class="advantages__item">
+                        <div class="advantages__item-img">
+                            <img src="img/advantages/it/6.svg" alt="">
+                        </div>
+                        <div class="advantages__item-text">
+                            Использование самых актуальных методов защиты при работе с данными клиента
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    <section class="projects">
+            @@include('html/projects.html')
+        </section>
+        
+        @@include('html/contacts.html')
+	</main>
+	@@include('html/footer.html')
+
+</body> 
+
+</html>
