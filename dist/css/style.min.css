@@ -127,7 +127,7 @@ h1, h2, h3, h4, h5, h6 {
   position: absolute;
   top: -10px;
   left: 259px;
-  background: url("img/buttons/firstimg.svg");
+  background: url("../img/buttons/firstimg.svg");
 }
 
 .arrow::after {
@@ -198,6 +198,11 @@ h1, h2, h3, h4, h5, h6 {
 
 .slick-next {
   right: 40%;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
 }
 
 body {
@@ -968,6 +973,7 @@ a {
 }
 
 .request-form {
+  position: relative;
   flex: 0 1 591px;
   min-height: 100%;
   box-shadow: 0px 0px 30px -10px rgba(0, 0, 0, 0.75);
@@ -976,6 +982,17 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.request-form__close-btn {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 2%;
+  right: 2%;
+}
+.request-form__close-btn img {
+  width: 100%;
+  height: 100%;
 }
 .request-form__content {
   display: flex;
@@ -1774,7 +1791,7 @@ a {
   position: absolute;
   bottom: 10%;
   right: 120px;
-  z-index: 100;
+  z-index: 3;
 }
 .fullscreen__title {
   position: absolute;
@@ -2038,4 +2055,49 @@ a {
   background: url("../img/animations/dots_spiner.gif");
   background-color: black;
   z-index: 5;
+}
+
+body {
+  position: relative;
+}
+
+.form-fixed {
+  position: fixed;
+  top: 1000%;
+  left: 0;
+  width: 100%;
+  transform: translate(0, -50%);
+  animation: form-fixed 0.5s ease-in-out forwards;
+  z-index: 30;
+}
+@media (max-width: 768px) {
+  .form-fixed {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.back-filter {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  animation: back-filter 0.5s ease-in-out forwards;
+}
+
+@keyframes back-filter {
+  0% {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  100% {
+    background-color: rgba(0, 0, 0, 0.329);
+  }
+}
+@keyframes form-fixed {
+  0% {
+    top: 1000%;
+  }
+  100% {
+    top: 50%;
+  }
 }

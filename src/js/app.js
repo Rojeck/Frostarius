@@ -110,4 +110,22 @@ function goto (e) {
 
 
 
+$('.request-form__close-btn').on('click', closeContactForm);
+$('.connect-btn').on('click', openContactForm);
+$('.cover').on('click',closeContactForm);
 
+function closeContactForm () {
+    $('.contact-block')[0].removeAttribute('style');    
+    $('.cover')[0].classList.remove('back-filter');
+    $('.contact-block')[0].classList.remove('form-fixed');
+    $('.request-form__close-btn')[0].classList.add('hidden');
+    document.body.classList.remove('overflow-hidden');
+}
+
+function openContactForm () {
+    $('.contact-block')[0].style.display = 'block';
+    $('.cover')[0].classList.add('back-filter');
+    $('.contact-block')[0].classList.add('form-fixed');
+    $('.request-form__close-btn')[0].classList.remove('hidden');
+    document.body.classList.add('overflow-hidden');
+}
