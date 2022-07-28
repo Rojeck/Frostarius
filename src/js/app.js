@@ -65,31 +65,50 @@ function goto (e) {
         behavior: "smooth"
     })}
 
+   
+
     $('.form').on('submit', function(event) {
         event.preventDefault();
         const sendButton = this.querySelector('button'); // prevent reload 
-        console.log(sendButton);
-        sendButton.classList.toggle('.fz');
+        const form = this;
+       
         if (validateForm(this)) {
             var formData = new FormData(this)  
             formData.append('service_id', 'service_qd6sg5t');
             formData.append('template_id', 'template_wqwoxc1');
             formData.append('user_id', '9Mted7Y1TpHPSiEya');
-            sendButton.classList.toggle('.fz');
+            formLoading(form, true);
             $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
                 type: 'POST',
                 data: formData,
                 contentType: false, // auto-detection
                 processData: false // no need to parse formData to string
             }).done(function() {
-                sendButton.classList.toggle('.fz');
-                form.reset();
+                formLoading(form, false);
+                console.log('success');
             }).fail(function(error) {
-                sendButton.classList.toggle('.fz');
+                formLoading(form, false);
                 alert('Oops... ' + JSON.stringify(error));
             });
         }
     });
+
+    function formLoading (form, loadingOn) {
+        const inputs = form.querySelectorAll('input'),
+             formBtn = form.querySelector('button');
+        if (loadingOn){
+            inputs.forEach(input => {
+                input.disabled = true;
+            });
+            formBtn.classList.add('btn-loading');
+        } else {
+            inputs.forEach(input => {
+                input.disabled = false;
+            });
+            formBtn.classList.remove('btn-loading');
+            form.reset();
+        }
+    }
 
     function validateForm (form) {
         const elements = form.querySelectorAll('._req');
@@ -110,22 +129,23 @@ function goto (e) {
 
 
 
-$('.request-form__close-btn').on('click', closeContactForm);
-$('.connect-btn').on('click', openContactForm);
-$('.cover').on('click',closeContactForm);
-
-function closeContactForm () {
-    $('.contact-block')[0].removeAttribute('style');    
-    $('.cover')[0].classList.remove('back-filter');
-    $('.contact-block')[0].classList.remove('form-fixed');
-    $('.request-form__close-btn')[0].classList.add('hidden');
-    document.body.classList.remove('overflow-hidden');
-}
-
-function openContactForm () {
-    $('.contact-block')[0].style.display = 'block';
-    $('.cover')[0].classList.add('back-filter');
-    $('.contact-block')[0].classList.add('form-fixed');
-    $('.request-form__close-btn')[0].classList.remove('hidden');
-    document.body.classList.add('overflow-hidden');
-}
+    $('.request-form__close-btn').on('click', closeContactForm);
+    $('.connect-btn').on('click', openContactForm);
+    $('.cover').on('click',closeContactForm);
+    
+    function closeContactForm () {
+        $('.contact-block')[0].removeAttribute('style');    
+        $('.cover')[0].classList.remove('back-filter');
+        $('.contact-block')[0].classList.remove('form-fixed');
+        $('.request-form__close-btn')[0].classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+    }
+    
+    function openContactForm () {
+        $('.contact-block')[0].style.display = 'block';
+        $('.cover')[0].classList.add('back-filter');
+        $('.contact-block')[0].classList.add('form-fixed');
+        $('.request-form__close-btn')[0].classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+    }
+    

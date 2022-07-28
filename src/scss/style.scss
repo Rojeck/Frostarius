@@ -2217,28 +2217,25 @@ color: rgba(255, 255, 255, 0.7);
     box-shadow: 1px 4px 8px 0px rgba(255, 0, 0, 0.733);
 }
 
-.fz {
+.btn-loading {
     position: relative;
     font-size: 0px;
     z-index: 3;
 }
-.fz::after {
-    content: '33';
+.btn-loading::after {
+    content: '';
     position: absolute;
-    
-    left: 0;
-    top: 0;
+    left: 50%;
+    top: 55%;
     transform: translate(-50%,-50%);
-    width: 30px;
-    height: 30px;
+    width: 34px;
+    height: 34px;
     background: url('../img/animations/dots_spiner.gif');
-    background-color: black;
+    background-size: contain;
+    background-repeat: no-repeat;
     z-index: 5;
+}
 
-}
-body {
-    position: relative;
-}
 .form-fixed {
     position: fixed;
     top: 1000%;
