@@ -65,6 +65,7 @@ function goto (e) {
 
     $('.form').on('submit', function(event) {
         event.preventDefault();
+        const sendButton = this.querySelector('button'); // prevent reload 
         const form = this;
         if (validateForm(form)) {
             const formData = new FormData(form);
