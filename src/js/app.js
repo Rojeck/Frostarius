@@ -42,6 +42,7 @@ $(document).ready(function(){
     });
 });
 
+
 // goto
 
 const menuLinks = document.querySelectorAll ('[data-goto]');
