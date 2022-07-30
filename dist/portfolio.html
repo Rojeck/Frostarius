@@ -1,4 +1,84 @@
-<div class="header__block">
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <head>
+		
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="css/style.min.css">
+	<title>Портфолио</title>
+	<script async src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script defer type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+	<script defer src="js/app.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+	<script type="text/javascript">
+        (function() {
+            emailjs.init('xYfxmlDugTPe5ZvtX');
+        })();
+    </script>
+
+	<script>
+	function mshow() {
+		const	mview = document.querySelector('.menu-block');
+				mview.style.left = '0';
+			}
+	function mclose() {
+		const	mview = document.querySelector('.menu-block');
+				mview.style.left = '-1000px';
+			}
+	</script>
+	
+        <style>
+
+            .head__logo img {
+                width: 300px;
+            }
+        .map {
+            display: block;
+        }
+        .menu-block {
+            display: none;
+        }
+        
+		.cost-calc {
+			display: block;
+		}
+            .it-text-add {
+                display: inline;
+            }
+
+        @media (max-width: 768px) {
+            .map {
+                display: none;
+            }
+            .menu-block {
+            display: block;
+        }
+            .cost-calc {
+                display: none;
+            }
+            .contact-block {
+			display: block;
+		}
+        }
+        .map__portfolio,.map__about,.map__design,.map__marketing,.map__it,.map__copyright,.map__services {
+            display: none;
+        }
+        .map__portfolio {
+            display: inline;
+        }
+        .cover {
+            display: none;
+        }
+        </style>
+	</head>
+</head>
+<body>
+    <div class="full-page">
+        <header class="header">
+			<div class="container">
+				<div class="header__block">
     <nav class="nav">
         
         <div class="head">
@@ -79,3 +159,46 @@
         <!-- additional block for mobile view //-->
     </nav>
 </div>
+
+			</div>
+		</header>
+        <main>
+            <div class="container">
+                <div class="onwork">
+                    Данный раздел сайта находится в разработке. Извините за неудобства
+                </div>
+            </div>
+        </main>
+        <footer class="footer">
+    <div class="container">
+        <div class="footer__content">
+            <div class="footer__logo">
+                <img src="img/logo/logo_small.svg" alt="logo">
+            </div>
+            <nav class="footer__menu">
+                <ul class="footer__menu-list">
+                    <li class="footer__menu-item">
+                        <a href="./it.html">IT</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="./marketing.html">Маркетинг</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="./design.html">Дизайн</a>
+                    </li>
+                    <li class="footer__menu-item">
+                        <a href="./copyright.html">Копирайтинг</a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="footer__confidential">
+                <p>Политика конфиденциальности</p>
+                <p>Copyright © 2022  «Frostarius Studio»</p>
+            </div>
+        </div>
+    </div>
+    <div class="cover"></div>
+</footer>
+    </div>
+</body>
+</html>

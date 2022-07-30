@@ -11,10 +11,14 @@
     height: 100%;
     
 }
+html {
+        height: 100%;
+}
 body {
     font-family: $mainFont;
     background-color: $blackBlue;
     position: relative;
+    height: 100%;
 }
 
 a {
@@ -31,9 +35,13 @@ a {
 }
 
 .color-line {
+    position: relative;
+    display: block;
     width: 100%;
     height: 2px;
-    background: url('../img/buttons/line1.svg');
+  
+    background:  linear-gradient(90deg, transparent 48%, #001325f5),
+    url('../img/buttons/line1.svg');
 }
 
 // general styles for forms
@@ -158,7 +166,7 @@ color: rgba(255, 255, 255, 0.7);
 
 .map {
     line-height: 35px;
-    padding: 40px 0;
+    padding: 10px 0;
     font-size: 18px;
     font-family: $secondaryFont;
     color: #FFFFFF;
@@ -1143,21 +1151,20 @@ color: rgba(255, 255, 255, 0.7);
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        background-color: $lightBlue;
-        
+        background: linear-gradient(180deg, #153451 66.67%, #004280 100%);
         
         
     }
     
     .adress-block {
         order: 2;
+        background-color: none;
             padding: 30px;
             padding-top: 0;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: $lightBlue;
             &__title {
                 font-weight: 400;
                 order: 2;
@@ -1207,6 +1214,7 @@ color: rgba(255, 255, 255, 0.7);
             box-shadow: none;
             padding: 0;
             flex: 0 0 400px;
+            background: none;
             &__content {
                display: flex;
                flex-direction: column;
@@ -1361,7 +1369,7 @@ color: rgba(255, 255, 255, 0.7);
             display: flex;
             flex-direction: column;
             align-items: center;
-            background-color: $lightBlue;
+            background-color: none;
             &__title {
                 font-weight: 400;
                 order: 2;
@@ -2244,12 +2252,18 @@ color: rgba(255, 255, 255, 0.7);
     transform: translate(0,-50%);
     animation: form-fixed .5s ease-in-out forwards;
     z-index: 30;
+    
   
     
     @media (max-width: 768px) {
         height: 100%;
         overflow: auto;
            
+    }
+    .request-form {
+        background: linear-gradient(180deg, #2666A2 0%, rgba(37, 108, 175, 0) 100%);
+filter: drop-shadow(0px 15px 20px rgba(23, 29, 38, 0.4));
+
     }
     
 }
@@ -2277,4 +2291,21 @@ color: rgba(255, 255, 255, 0.7);
     100% {
         top: 50%;
     }
+}
+
+.full-page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    main {
+        flex: 1 1 auto;
+
+    }
+}
+.onwork {
+    color: rgba(255, 255, 255, 0.397);
+    font-size: 22px;
+    padding: 100px;
+    text-align: center;
+    font-family: $mainFont;
 }

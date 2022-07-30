@@ -1,7 +1,5 @@
 // slider
 
-
-
 $(document).ready(function(){
    
     $('.slider').slick({
@@ -45,10 +43,9 @@ $(document).ready(function(){
 });
 
 
-
+// goto
 
 const menuLinks = document.querySelectorAll ('[data-goto]');
-
 menuLinks.forEach (element => {
     element.addEventListener('click', goto)
 })
@@ -65,19 +62,19 @@ function goto (e) {
         behavior: "smooth"
     })}
 
-   
+   // Form functionality
 
     $('.form').on('submit', function(event) {
         event.preventDefault();
         const sendButton = this.querySelector('button'); // prevent reload 
         const form = this;
-       
-        if (validateForm(this)) {
-            var formData = new FormData(this)  
+        if (validateForm(form)) {
+            const formData = new FormData(form);
             formData.append('service_id', 'service_qd6sg5t');
             formData.append('template_id', 'template_wqwoxc1');
             formData.append('user_id', '9Mted7Y1TpHPSiEya');
             formLoading(form, true);
+            disableInputs(form, true);
             $.ajax('https://api.emailjs.com/api/v1.0/email/send-form', {
                 type: 'POST',
                 data: formData,
@@ -85,29 +82,46 @@ function goto (e) {
                 processData: false // no need to parse formData to string
             }).done(function() {
                 formLoading(form, false);
-                console.log('success');
+                disableInputs(form, true);
+                form.reset();
+                changeFormText(form, "Заявка отправлена", "Мы свяжемся с вами в течение 30 минут");
             }).fail(function(error) {
                 formLoading(form, false);
-                alert('Oops... ' + JSON.stringify(error));
+                disableInputs(form, false);
+                changeFormText(form, "Произошла ошибка", "Пожалуйста, попробуйте позже");
             });
         }
     });
 
     function formLoading (form, loadingOn) {
-        const inputs = form.querySelectorAll('input'),
-             formBtn = form.querySelector('button');
+        const formBtn = form.querySelector('button');
         if (loadingOn){
+            disableInputs (form, true);
+            formBtn.classList.add('btn-loading');
+        } else {
+            disableInputs (form, false);
+            formBtn.classList.remove('btn-loading');
+        }
+    }
+
+    function disableInputs (form, status) {
+        const inputs = form.querySelectorAll('input');
+        if (status) {
             inputs.forEach(input => {
                 input.disabled = true;
             });
-            formBtn.classList.add('btn-loading');
         } else {
             inputs.forEach(input => {
                 input.disabled = false;
             });
-            formBtn.classList.remove('btn-loading');
-            form.reset();
         }
+    }
+
+    function changeFormText (form, title, subTitle) {
+        const titleItem = form.closest('.container').querySelector('._form-title'),
+             subTitleItem = form.closest('.container').querySelector('._form-sub-title');
+             titleItem.textContent = title;
+             subTitleItem.textContent = subTitle;
     }
 
     function validateForm (form) {
@@ -117,17 +131,12 @@ function goto (e) {
             if (element.value === '') {
                 element.classList.add('red-highlighted');
                 validate = false;
-                
             }  else if (element.classList.contains('red-highlighted')) {
                 element.classList.remove('red-highlighted');
-                
             }
         })
         return validate;
     }
-
-
-
 
     $('.request-form__close-btn').on('click', closeContactForm);
     $('.connect-btn').on('click', openContactForm);
@@ -141,7 +150,8 @@ function goto (e) {
         document.body.classList.remove('overflow-hidden');
     }
     
-    function openContactForm () {
+    function openContactForm (e) {
+        e.preventDefault();
         $('.contact-block')[0].style.display = 'block';
         $('.cover')[0].classList.add('back-filter');
         $('.contact-block')[0].classList.add('form-fixed');

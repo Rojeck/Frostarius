@@ -30,7 +30,9 @@
 	</script>
 	
         <style>
- 
+            .head__logo img {
+                width: 300px;
+            }
             .map {
             display: block;
         }
@@ -50,6 +52,12 @@
                 display: inline;
             }
             @media (max-width: 768px) {
+            .map {
+                display: none;
+            }
+            .menu-block {
+            display: block;
+        }
             .cost-calc {
                 display: none;
             }
@@ -84,7 +92,7 @@
                 <a href="index.html">Главная</a>
                 <a class="highlited-item map__portfolio" style="opacity: 1;" href="">/ Порфолио</a>
                 <a class="highlited-item map__about" style="opacity: 1;" href="">/ О компании</a>
-                <a href="index.html" class="map__services">/ Услуги /</a>
+                <a href="index.html#proposals" name="proposals" class="map__services">/ Услуги /</a>
                 <a class="highlited-item map__design" style="opacity: 1;" href="">Дизайн</a>
                 <a class="highlited-item map__marketing" style="opacity: 1;" href="">Маркетинг</a>
                 <a class="highlited-item map__it" style="opacity: 1;" href="">IT</a>
@@ -105,7 +113,7 @@
 
             <div class="menu ">
                 <ul class="menu__list">
-                    <li class="menu__item"><a data-goto = '.services-gt' href="#">Услуги</a></li>
+                    <li class="menu__item"><a data-goto = '.proposals-gt' href="#">Услуги</a></li>
                     <li class="menu__item"><a href="portfolio.html">Портфолио</a></li>
                     <li class="menu__item"><a href="about.html">О компании</a></li>
                     <li class="menu__item"><a data-goto='.contacts-gt' href="#">Контакты</a></li>
@@ -274,8 +282,8 @@
                     <img src="img/buttons/close-square.svg" alt="">
                 </div>
                 <div class="request-form__content">
-                    <div class="request-form__title">Оставьте заявку</div>
-                    <div class="request-form__sub-title">И мы свяжемся с вами в течение 30 минут</div>
+                    <div class="request-form__title _form-title">Оставьте заявку</div>
+                    <div class="request-form__sub-title _form-sub-title">И мы свяжемся с вами в течение 30 минут</div>
                     <div class="request-form__form">
                         <form action="request-form" class="form" id="contact-form">
                             <input	class="request-form__item form__item _req" placeholder="Имя *" type="text" name="username" id="username">
@@ -292,9 +300,9 @@
     </div>
 </section>
 <section class="cost-calc contacts-gt">
-    <div class="container ">
-        <h3 class="cost-calc__title form-title">
-            Оставьте заявку для расчета <br /> стоимости вашего проекта.
+    <div class="container">
+        <h3 class="cost-calc__title _form-title">
+            Оставьте заявку для расчета <p class="_form-sub-title">стоимости вашего проекта</p>
         </h3>
         <div class="cost-calc__form ">
             <form action="#" class="form">
